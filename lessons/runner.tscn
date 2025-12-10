@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://c4jjlttvtvjqc" path="res://assets/runner.svg" id="1_m3p76"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f7b3c"]
-radius = 23.194826
+radius = 25.019993
 
 [node name="Runner" type="CharacterBody2D"]
+y_sort_enabled = true
 motion_mode = 1
 script = ExtResource("1_f7b3c")
 
@@ -14,5 +15,9 @@ script = ExtResource("1_f7b3c")
 texture = ExtResource("1_m3p76")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 41)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-1, 35)
 shape = SubResource("CircleShape2D_f7b3c")
+
+[node name="Camera2D" type="Camera2D" parent="."]
