@@ -20,7 +20,7 @@ position = Vector2(1907, 1334)
 texture = ExtResource("3_gkp25")
 
 [node name="Curcuit" parent="." instance=ExtResource("4_sepuf")]
-position = Vector2(1909, 1361)
+position = Vector2(1909, 1355)
 
 [node name="SimpleObstacle" parent="." instance=ExtResource("2_4o7yg")]
 z_index = 1
