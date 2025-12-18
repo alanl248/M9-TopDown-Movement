@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://3gicpphw4ki0"]
+[gd_scene load_steps=11 format=3 uid="uid://3gicpphw4ki0"]
 
 [ext_resource type="Script" uid="uid://5nrf8ebgtofs" path="res://lessons/game.gd" id="1_48faf"]
 [ext_resource type="PackedScene" uid="uid://bw7oebjpdt5r8" path="res://lessons/runner.tscn" id="1_yasw7"]
@@ -9,12 +9,17 @@
 [ext_resource type="Theme" uid="uid://cdcyvsn1fp8wa" path="res://assets/countdown/count_down_theme.tres" id="7_viysf"]
 [ext_resource type="Script" uid="uid://57e8080cpukf" path="res://assets/countdown/count_down.gd" id="8_tpjcj"]
 [ext_resource type="PackedScene" uid="uid://dj6ye05dbiqpi" path="res://lessons/pause_screen.tscn" id="9_tpjcj"]
+[ext_resource type="PackedScene" uid="uid://c1nfritapqyi1" path="res://lessons/Bouncer.tscn" id="10_8c4bg"]
 
-[node name="game" type="Node2D"]
+[node name="Game" type="Node2D"]
 process_mode = 3
 y_sort_enabled = true
 position = Vector2(7, 18)
 script = ExtResource("1_48faf")
+
+[node name="CircuitBackground" type="Sprite2D" parent="."]
+position = Vector2(1907, 1334)
+texture = ExtResource("3_gkp25")
 
 [node name="SimpleObstacle" parent="." instance=ExtResource("2_4o7yg")]
 z_index = 1
@@ -40,9 +45,10 @@ y_sort_enabled = false
 position = Vector2(1236, 542)
 motion_mode = 0
 
-[node name="CircuitBackground" type="Sprite2D" parent="."]
-position = Vector2(1907, 1334)
-texture = ExtResource("3_gkp25")
+[node name="Bouncer" parent="." instance=ExtResource("10_8c4bg")]
+unique_name_in_owner = true
+top_level = true
+position = Vector2(761, 929)
 
 [node name="Curcuit" parent="." instance=ExtResource("4_sepuf")]
 position = Vector2(1909, 1355)
@@ -72,3 +78,4 @@ metadata/_custom_type_script = "uid://57e8080cpukf"
 
 [node name="PauseScreen" parent="CanvasLayer" instance=ExtResource("9_tpjcj")]
 unique_name_in_owner = true
+visible = false
