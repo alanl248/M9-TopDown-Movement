@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://3gicpphw4ki0"]
+[gd_scene load_steps=10 format=3 uid="uid://3gicpphw4ki0"]
 
 [ext_resource type="Script" uid="uid://5nrf8ebgtofs" path="res://lessons/game.gd" id="1_48faf"]
 [ext_resource type="PackedScene" uid="uid://bw7oebjpdt5r8" path="res://lessons/runner.tscn" id="1_yasw7"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://xyj0pi0rmjqb" path="res://curcuit.tscn" id="4_sepuf"]
 [ext_resource type="Theme" uid="uid://cdcyvsn1fp8wa" path="res://assets/countdown/count_down_theme.tres" id="7_viysf"]
 [ext_resource type="Script" uid="uid://57e8080cpukf" path="res://assets/countdown/count_down.gd" id="8_tpjcj"]
+[ext_resource type="PackedScene" uid="uid://dj6ye05dbiqpi" path="res://lessons/pause_screen.tscn" id="9_tpjcj"]
 
 [node name="game" type="Node2D"]
 y_sort_enabled = true
@@ -49,15 +50,16 @@ position = Vector2(2311, 400)
 
 [node name="CountDown" type="Label" parent="CanvasLayer"]
 unique_name_in_owner = true
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -162.0
-offset_top = -109.5
-offset_right = 162.0
-offset_bottom = 109.5
+visible = false
+anchors_preset = -1
+anchor_left = 0.416
+anchor_top = 0.39900002
+anchor_right = 0.58400005
+anchor_bottom = 0.601
+offset_left = -0.72003174
+offset_top = -0.42001343
+offset_right = 0.71984863
+offset_bottom = 0.4199829
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("7_viysf")
@@ -66,3 +68,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("8_tpjcj")
 metadata/_custom_type_script = "uid://57e8080cpukf"
+
+[node name="PauseScreen" parent="CanvasLayer" instance=ExtResource("9_tpjcj")]
+unique_name_in_owner = true
+visible = false
