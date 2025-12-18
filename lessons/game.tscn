@@ -11,9 +11,23 @@
 [ext_resource type="PackedScene" uid="uid://dj6ye05dbiqpi" path="res://lessons/pause_screen.tscn" id="9_tpjcj"]
 
 [node name="game" type="Node2D"]
+process_mode = 3
 y_sort_enabled = true
 position = Vector2(7, 18)
 script = ExtResource("1_48faf")
+
+[node name="SimpleObstacle" parent="." instance=ExtResource("2_4o7yg")]
+z_index = 1
+position = Vector2(1553, 409)
+
+[node name="SimpleObstacle2" parent="." instance=ExtResource("2_4o7yg")]
+position = Vector2(1934, 511)
+
+[node name="SimpleObstacle3" parent="." instance=ExtResource("2_4o7yg")]
+position = Vector2(496, 1055)
+
+[node name="SimpleObstacle4" parent="." instance=ExtResource("2_4o7yg")]
+position = Vector2(2311, 400)
 
 [node name="FinishLine" parent="." instance=ExtResource("2_cpqg5")]
 unique_name_in_owner = true
@@ -32,19 +46,6 @@ texture = ExtResource("3_gkp25")
 
 [node name="Curcuit" parent="." instance=ExtResource("4_sepuf")]
 position = Vector2(1909, 1355)
-
-[node name="SimpleObstacle" parent="." instance=ExtResource("2_4o7yg")]
-z_index = 1
-position = Vector2(1553, 409)
-
-[node name="SimpleObstacle2" parent="." instance=ExtResource("2_4o7yg")]
-position = Vector2(1934, 511)
-
-[node name="SimpleObstacle3" parent="." instance=ExtResource("2_4o7yg")]
-position = Vector2(496, 1055)
-
-[node name="SimpleObstacle4" parent="." instance=ExtResource("2_4o7yg")]
-position = Vector2(2311, 400)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -71,4 +72,3 @@ metadata/_custom_type_script = "uid://57e8080cpukf"
 
 [node name="PauseScreen" parent="CanvasLayer" instance=ExtResource("9_tpjcj")]
 unique_name_in_owner = true
-visible = false
